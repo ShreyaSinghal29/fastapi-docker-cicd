@@ -11,7 +11,8 @@ WORKDIR /app
 COPY . /app
 
 # Create a virtual environment and activate it
-RUN python3 -m venv /app/venv
+RUN python3 -m venv /app/venv && /app/venv/bin/pip install --no-cache-dir -r requirements.txt
+
 
 # Use the virtual environment for installation
 RUN /app/venv/bin/pip install --no-cache-dir -r requirements.txt
